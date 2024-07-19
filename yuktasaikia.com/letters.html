@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Letters</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .letter-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .letter-item {
+            width: calc(33% - 20px);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .letter-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = prompt("Please enter the password to view this page:", "");
+            if (password === "6thApril") {
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("Incorrect password!");
+                window.location.href = "index.html"; // Redirect to home page on incorrect password
+            }
+        }
+
+        function openModal(letter) {
+            var modal = document.getElementById('myModal');
+            var modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = '';
+
+            var pages = letter.split(',');
+
+            for (var i = 0; i < pages.length; i++) {
+                var img = document.createElement('img');
+                img.src = pages[i];
+                modalContent.appendChild(img);
+            }
+
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body onload="checkPassword()">
+    <div class="container" id="content" style="display:none;">
+        <header>
+            <h1>The Letters</h1>
+        </header>
+        <main>
+            <div class="letters-gallery">
+                <h2>that I wrote for you, with LOVE❤️</h2>
+                <div class="letter-images">
+                    <div class="letter-item" onclick="openModal('letter1.jpg')">
+                        <img src="letter1.jpg" alt="Letter 1" class="letter-image">
+                        <p class="caption">This was my first letter to you, also my first letter that I wrote to someone out of love❤</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter2.jpg,letter3.jpg,letter4.jpg')">
+                        <img src="letter2.jpg" alt="Letter 2" class="letter-image">
+                        <p class="caption">My first drawings that I made for you :)</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter5.jpg')">
+                        <img src="letter5.jpg" alt="Letter 3" class="letter-image">
+                        <p class="caption">Oh the 11:11 wishes :)</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter6.jpg,letter7.jpg')">
+                        <img src="letter6.jpg" alt="Letter 4" class="letter-image">
+                        <p class="caption">I'll dearly miss February</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter8.jpg,letter9.jpg')">
+                        <img src="letter8.jpg" alt="Letter 5" class="letter-image">
+                        <p class="caption">And then ofc, it was baby's birthday❤</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter10.jpg')">
+                        <img src="letter10.jpg" alt="Letter 6" class="letter-image">
+                        <p class="caption">The goal was to support you like this till the end of time :)</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter11.jpg')">
+                        <img src="letter11.jpg" alt="Letter 7" class="letter-image">
+                        <p class="caption">Um if you rmb, this list wasn't our brightest idea... xD</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter12.jpg,letter13.jpg,letter14.jpg,letter15.jpg,letter16.jpg,letter17.jpg')">
+                        <img src="letter12.jpg" alt="Letter 8" class="letter-image">
+                        <p class="caption">This was kinda cute and creative :)</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter18.jpg,letter19.jpg')">
+                        <img src="letter18.jpg" alt="Letter 9" class="letter-image">
+                        <p class="caption">Perhaps this didn't mean anything to you, it did to me. Least you can do is read it :)</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter20.jpg')">
+                        <img src="letter20.jpg" alt="Letter 10" class="letter-image">
+                        <p class="caption">You being sick would make me sad :(</p>
+                    </div>
+                    <div class="letter-item" onclick="openModal('letter21.jpg,letter22.jpg,letter23.jpg,letter24.jpg,letter25.jpg,letter26.jpg,letter27.jpg')">
+                        <img src="letter21.jpg" alt="Letter 11" class="letter-image">
+                        <p class="caption">It was thoughtful :)</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Made with ❤️ for my dear, Riti.</p>
+            <button class="letters-button" onclick="location.href='index.html'">Back to Messages</button>
+        </footer>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+</body>
+</html>
