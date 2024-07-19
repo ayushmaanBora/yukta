@@ -1,0 +1,170 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    color: #ff69b4; /* pinkish font color */
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 248, 240, 0.9); /* off-white background color */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    overflow-y: auto; /* allow scrolling */
+    margin-top: 20px;
+    position: relative;
+}
+
+header h1, .letters-gallery h2, .memories-gallery h2, .blog-content h2 {
+    font-size: 36px;
+    color: #ff69b4; /* pinkish header color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message-board {
+    background: #ff69b4; /* pinkish background color */
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 200px;
+}
+
+.message-board::before {
+    content: '';
+    background: url('flowers.png') no-repeat center;
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+
+.cutus-button, .letters-button, .written-about-us-button, .memories-button, .point-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+}
+
+.cutus-button:hover, .letters-button:hover, .written-about-us-button:hover, .memories-button:hover, .point-button:hover {
+    background-color: #ff1493;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+}
+
+.pets-gallery, .letters-gallery, .memories-gallery, .blog-content {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pet-images, .letter-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.pet-item, .letter-item {
+    width: calc(50% - 20px); /* Adjust width for 2 by 2 layout */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pet-image, .letter-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.memory-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.memory-item {
+    max-width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.memory-image, .memory-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ff69b4;
+}
+
+.blog-entry {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.blog-entry h3 {
+    font-size: 24px;
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.blog-entry p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Add flower decorations */
+.flower-decoration {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('flowers.png') no-repeat center;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.flower-decoration.flower1 { top: 10px; left: 10px; }
+.flower-decoration.flower2 { top: 10px; right: 10px; }
+.flower-decoration.flower3 { bottom: 10px; left: 10px; }
+.flower-decoration.flower4 { bottom: 10px; right: 10px; }
